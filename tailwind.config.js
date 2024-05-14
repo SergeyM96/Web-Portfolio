@@ -14,8 +14,8 @@ module.exports = {
         blackopsone: ['var(--font-black-ops-one)', ...fontFamily.sans],
       },
       colors:{
-        dark: "#00008B",
-        light: "#f5f5f5",
+        dark: "#0f0f0f",
+        light: "#EDF9FE",
         primary: "#FFFF00", 
         primaryDark: "#00FF00", 
       }

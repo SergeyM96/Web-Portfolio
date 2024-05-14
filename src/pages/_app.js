@@ -1,3 +1,4 @@
+import NavBar from '@/components/NavBar'
 import '@/styles/globals.css'
 import { Black_Ops_One, Tinos } from 'next/font/google'
 import Head from 'next/head'
@@ -23,11 +24,14 @@ export default function App({ Component, pageProps }) {
     <>
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.ico" />
     </Head>
-    <main className={`${blackOpsOne.variable} font-blackopsone bg-light w-full min-h-screen`}>
-    <Component {...pageProps} />
+    <main className={` bg-light w-full min-h-screen`}>
+    <NavBar />
+      <Component {...pageProps} />
     </main>
     </>
   ) 
 }
+
+export { blackOpsOne, tinos }
