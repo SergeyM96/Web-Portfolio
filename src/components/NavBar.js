@@ -3,6 +3,9 @@ import Link from 'next/link'
 import Logo from './Logo'
 import styles from '../styles/navbar.module.css';
 import { useRouter } from 'next/router';
+import { LinkedinIcon, GithubIcon , LeetcodeIcon, EmailIcon} from './Icons';
+import { motion } from 'framer-motion';
+
 
 const CustomLink = ({href, title, className=" "}) => {
   const router = useRouter();
@@ -11,7 +14,7 @@ const CustomLink = ({href, title, className=" "}) => {
       {title}
 
       <span className={` 
-        h-[2px] inline-block bg-dark absolute left-0 top-7 
+        h-[1.5px] inline-block bg-dark absolute left-0 top-7 
         group-hover:w-full transition-[width] ease duration-300
         ${router.asPath === href ? 'w-full' : 'w-0'}
       `}>&nbsp;</span>
@@ -36,16 +39,44 @@ const NavBar = () => {
 
         </nav>
 
-        <div className='absolut left-[-50%] top-2 translate-x-[-50%]'>
+        <div className='absolut left-[-50%] top-2 translate-x-[-100%]'>
         <Logo />
         </div>
 
         <nav className={styles.navLinks}>
 
-            <Link href="/" target={"_blank"}>T</Link>
-            <Link href="/" target={"_blank"}>T</Link>
-            <Link href="/" target={"_blank"}>T</Link>
-            <Link href="/" target={"_blank"}>T</Link>
+            <motion.a href="https://www.linkedin.com/in/sergey-morozov-26043a240/" target={"_blank"}
+            whileHover={{y:-2}}
+            whileTap={{scale:0.9}}
+            className='w-6 mr-3'
+            >
+            <LinkedinIcon />
+            </motion.a>
+
+            <motion.a href="https://github.com/SergeyM96" target={"_blank"}
+            whileHover={{y:-2}}
+            whileTap={{scale:0.9}}
+            className='w-6 mx-3'
+            >
+            <GithubIcon />
+            </motion.a>
+
+
+            <motion.a href="https://leetcode.com/u/SerjM/" target={"_blank"}
+            whileHover={{y:-2}}
+            whileTap={{scale:0.9}}
+            className='w-6 mx-3'
+            >
+            <LeetcodeIcon />
+            </motion.a>
+
+            <motion.a href="mailto:globaldevsm@gmail.com" target={"_blank"}
+            whileHover={{y:-2}}
+            whileTap={{scale:0.9}}
+            className='w-6 ml-3'
+            >
+            <EmailIcon />
+            </motion.a>
 
         </nav>
 

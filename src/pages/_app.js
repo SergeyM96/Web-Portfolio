@@ -1,15 +1,7 @@
 import NavBar from '@/components/NavBar'
 import '@/styles/globals.css'
-import { Black_Ops_One, Tinos } from 'next/font/google'
+import { Tinos } from 'next/font/google'
 import Head from 'next/head'
-
-//  Font instance for "Black Ops One"
-const blackOpsOne = Black_Ops_One({
-  weight: '400',
-  subsets: ['latin'],
-  style: 'normal',
-  variable: '--font-black-ops-one',
-})
 
 //  Font instance for "Tinos"
 const tinos = Tinos({
@@ -34,4 +26,4 @@ export default function App({ Component, pageProps }) {
   ) 
 }
 
-export { blackOpsOne, tinos }
+export { tinos }
