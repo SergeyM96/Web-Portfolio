@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-const AnimatedText = ({ text, className = '', onAnimationComplete }) => {
+const AnimatedText = ({ text, className = '', textSize = '', onAnimationComplete }) => {
   const controls = useAnimation();
   const { ref, inView } = useInView({ triggerOnce: true });
   const [titleAnimationComplete, setTitleAnimationComplete] = useState(false);
@@ -21,7 +21,7 @@ const AnimatedText = ({ text, className = '', onAnimationComplete }) => {
       y: 0,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.2, // Delay between each character
+        delayChildren: 0.2,
       },
     },
   };
@@ -32,7 +32,7 @@ const AnimatedText = ({ text, className = '', onAnimationComplete }) => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 1, // Adjust the duration for a smoother animation
+        duration: 1,
         ease: 'easeInOut',
       },
     },
@@ -46,13 +46,13 @@ const AnimatedText = ({ text, className = '', onAnimationComplete }) => {
         animate={controls}
         variants={wordAnimation}
         aria-label={text}
-        className="inline-block w-full text-dark font-bold text-7xl"
+        className={`inline-block w-full text-dark font-bold ${textSize}`}
       >
         {text.split(' ').map((word, index) => (
           <motion.span
             key={index}
             variants={wordAnimation}
-            className="inline-block mx-4" // Add margin for spacing between words
+            className="inline-block mx-4"
           >
             {word.split('').map((char, charIndex) => (
               <motion.span key={charIndex} variants={charAnimation} className="inline-block">

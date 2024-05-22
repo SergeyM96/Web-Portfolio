@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
-import { Inter } from 'next/font/google';
 import Layout from '@/components/Layout';
 import AnimatedText from '@/components/AnimatedText';
-import AnimatedLogo from '@/components/AnimatedLogo';
+import AnimatedLogo from '@/components/AnimatedProfilePic';
 import { motion } from 'framer-motion';
+import SkillIcon from '@/components/SkillIcon'; 
+import { ReactIcon, NodeIcon , NextIcon , TailwindIcon,
+         HtmlIcon, CssIcon, JsIcon, BootstrapIcon, JavaIcon,
+          SceneBuilderIcon, AndroidIcon, PythonIcon, SeleniumIcon, 
+            AWSIcon, DockerIcon, JenkinsIcon } from '@/components/Icons';
 
-const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   const [titleAnimationComplete, setTitleAnimationComplete] = useState(false);
@@ -14,6 +17,27 @@ export default function Home() {
   const handleTitleAnimationComplete = () => {
     setTitleAnimationComplete(true);
   };
+
+  const skills = [
+    { icon: <ReactIcon /> },
+    { icon: <NodeIcon /> },
+    { icon: <NextIcon /> },
+    { icon: <JsIcon /> },
+    { icon: <HtmlIcon /> },
+    { icon: <CssIcon /> },
+    { icon: <BootstrapIcon /> },
+    { icon: <TailwindIcon /> },
+    { icon: <JavaIcon /> },
+    { icon: <SceneBuilderIcon /> },
+    { icon: <AndroidIcon /> },
+    { icon: <PythonIcon /> },
+    { icon: <SeleniumIcon /> },
+    { icon: <AWSIcon /> },
+    { icon: <DockerIcon /> },
+    { icon: <JenkinsIcon /> }
+
+
+  ];
 
   return (
     <>
@@ -25,20 +49,39 @@ export default function Home() {
         <Layout className="pt-0">
           <div className="flex items-center justify-between w-full">
             <AnimatedLogo isAnimationComplete={titleAnimationComplete} />
-            <div className="w-1/2 flex flex-col items-center self-center" style={{ marginTop: '-30rem' }}>
+            <div
+              className="w-1/2 flex flex-col items-center self-center"
+              style={{ marginTop: '-10rem'}}
+            >
               <AnimatedText
                 text="Welcome!"
-                className="!text-6xl !text-left"
+                textSize="text-9xl"
+                className="!text-left"
                 onAnimationComplete={handleTitleAnimationComplete}
               />
-              <AnimatedText text="I&apos;m Sergey, a web and software developer." className="!text-4xl !text-left" />
+              <AnimatedText
+                text="I`m Sergey, a web and software developer."
+                textSize='text-7xl'
+                className="!text-left"
+              />
               <div style={{ height: '4rem' }}>
                 {/* Reserve space for the motion.p element */}
                 {titleAnimationComplete && (
-                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className="text-2xl mr-20">
-                    My main skillset:
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    className="text-4xl text-left mt-4"
+                    style={{ marginRight: '60rem' }}
+                  >
+                    Skillset:
                   </motion.p>
                 )}
+              </div>
+              <div className="grid grid-cols-4 gap-4 mr-64">
+                {skills.map((skill, index) => (
+                   <SkillIcon key={index} icon={skill.icon} />
+                   ))}
               </div>
             </div>
           </div>
