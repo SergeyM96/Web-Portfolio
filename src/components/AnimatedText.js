@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-const AnimatedText = ({ text, className = '', textSize = '', onAnimationComplete }) => {
+const AnimatedText = ({ text, className = '', textSize = '', textColor = '', onAnimationComplete }) => {
   const controls = useAnimation();
   const { ref, inView } = useInView({ triggerOnce: true });
   const [titleAnimationComplete, setTitleAnimationComplete] = useState(false);
@@ -46,7 +46,7 @@ const AnimatedText = ({ text, className = '', textSize = '', onAnimationComplete
         animate={controls}
         variants={wordAnimation}
         aria-label={text}
-        className={`inline-block w-full text-dark font-bold ${textSize}`}
+        className={`inline-block w-full  font-bold ${textSize} ${textColor}`}
       >
         {text.split(' ').map((word, index) => (
           <motion.span

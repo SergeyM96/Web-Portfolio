@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes lineGrow {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 75%; 
+    }
+}
+
+.animate-line {
+    animation: lineGrow 2s ease-in-out forwards;
+    width: 75%; /* Same width as specified in the keyframes */
+}

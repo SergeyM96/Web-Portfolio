@@ -7,21 +7,24 @@ import { LinkedinIcon, GithubIcon , LeetcodeIcon, EmailIcon} from './Icons';
 import { motion } from 'framer-motion';
 
 
-const CustomLink = ({href, title, className=" "}) => {
+export const CustomLink = ({ href, title, className = "" }) => {
   const router = useRouter();
-  return(
+  const showArrow = href === '/projects'; // Check if href is for Projects link
+  return (
     <Link href={href} className={`${className} relative group`}>
-      {title}
-
+      <span className="flex items-center">
+        {title}
+        {showArrow && <span className="ml-2 transform transition-transform group-hover:translate-x-2">&rarr;</span>}
+      </span>
       <span className={` 
         h-[1.5px] inline-block bg-dark absolute left-0 top-7 
         group-hover:w-full transition-[width] ease duration-300
         ${router.asPath === href ? 'w-full' : 'w-0'}
       `}>&nbsp;</span>
-
     </Link>
-  )
-}
+  );
+};
+
 
 const NavBar = () => {
   return (
@@ -34,7 +37,7 @@ const NavBar = () => {
 
             <CustomLink href="/" title="Home" className='mr-4' />
             <CustomLink href="/about" title="About" className='mx-4 '/>
-            <CustomLink href="/projects" title="Projects" className='mx-4'/>
+            <CustomLink href="/SomeIdea" title="SomeIdea" className='mx-4'/>
             <CustomLink href="/articles" title="Articles" className='ml-4'/>
 
         </nav>
