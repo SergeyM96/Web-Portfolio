@@ -71,7 +71,7 @@ export default function Home() {
       // Set a timeout to switch from GIF to image after the HireMe animation
       const timer = setTimeout(() => {
         setShowGif(false);
-      }, 4000); // Adjust the delay as needed
+      }, 3000); // Adjust the delay as needed
 
       return () => clearTimeout(timer);
     }
@@ -158,8 +158,11 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 1 }}
               animate={{ opacity: 0 }}
+              style={{ color: '#002B5B' }}
               transition={{ duration: 10 }} // Adjust duration for fade out effect
+              className="relative flex flex-col items-center"
             >
+              <span className="text-xl font-bold mb-2">CODING . . .</span>
               <Image
                 src="/coding-person.gif"
                 alt="Eudaimon"
@@ -171,13 +174,17 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 8 }} // Adjust duration for fade in effect
+              style={{ color: '#002B5B' }}
+              transition={{ duration: 10 }} // Adjust duration for fade in effect
+              className="relative flex flex-col items-center"
             >
+              <span className="text-xl font-bold mb-2">Let&apos;s GO!</span>
               <Image
                 src="/rocket.png" // Replace with your image path
                 alt="Replacement Image"
                 width={300}
                 height={200}
+                
               />
             </motion.div>
           )}
