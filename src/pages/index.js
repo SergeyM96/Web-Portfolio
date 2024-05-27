@@ -71,7 +71,7 @@ export default function Home() {
       // Set a timeout to switch from GIF to image after the HireMe animation
       const timer = setTimeout(() => {
         setShowGif(false);
-      }, 2700); // Adjust the delay as needed
+      }, 2000); // Adjust the delay as needed
 
       return () => clearTimeout(timer);
     }
@@ -159,7 +159,7 @@ export default function Home() {
               initial={{ opacity: 1 }}
               animate={{ opacity: 0 }}
               style={{ color: '#002B5B' }}
-              transition={{ duration: 9 }} // Adjust duration for fade out effect
+              transition={{ duration: 8 }} // Adjust duration for fade out effect
               className="relative flex flex-col items-center"
             >
               <span className="text-xl font-bold mb-2">CODING . . .</span>
@@ -174,8 +174,8 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              style={{ color: '#002B5B' }}
-              transition={{ duration: 7 }} // Adjust duration for fade in effect
+              style={{ color: '#ee8e68' }}
+              transition={{ duration: 6 }} // Adjust duration for fade in effect
               className="relative flex flex-col items-center"
             >
               <span className="text-xl font-bold mb-2">Let&apos;s GO!</span>
