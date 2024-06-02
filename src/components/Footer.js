@@ -26,7 +26,7 @@ const Footer = () => {
         >
           <Link
             href="/"
-            className="text-3xl font-bold hover:text-[#3498DB] transition-colors duration-300 mb-2"
+            className="text-3xl font-bold hover:text-[#ee8e68] transition-colors duration-300 mb-2"
           >
             Eudaimon
           </Link>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Logo from './Logo';
+import Logo from './SMLogo';
 import styles from '../styles/navbar.module.css';
 import { useRouter } from 'next/router';
 import { LinkedinIcon, GithubIcon, LeetcodeIcon, EmailIcon } from './Icons';
@@ -29,7 +29,7 @@ const NavBar = () => {
     <header className={`w-full px-32 py-8 font-medium flex items-center justify-between relative`}>
       <nav className={styles.navLinks}>
         <CustomLink href="/" title="Home" className='mr-4' />
-        <CustomLink href="/about" title="About" className='mx-4 ' />
+        <CustomLink href="/aboutUs" title="About" className='mx-4 ' />
         <CustomLink href="/SomeIdea" title="SomeIdea" className='mx-4' />
         <CustomLink href="/articles" title="Articles" className='ml-4' />
       </nav>

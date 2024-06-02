@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 const MotionLink = motion.a;
 
-const Logo = () => {
+const SMLogo = () => {
   const router = useRouter();
   const [isHovered, setIsHovered] = useState(false);
   const [scrollY, setScrollY] = useState(0);
@@ -24,7 +24,6 @@ const Logo = () => {
   const handleScrollToTop = (e) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    router.push('/');
   };
 
   return (
@@ -55,4 +54,4 @@ const Logo = () => {
   );
 };
 
-export default Logo;
+export default SMLogo;
