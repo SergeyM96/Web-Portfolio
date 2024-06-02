@@ -17,7 +17,8 @@ import HireMe from '@/components/HireMe';
 import Image from 'next/image';
 import BackgroundElements from '@/components/BackgroundElements';
 import { LampComp } from '@/components/LampComponent';
-import { BentoGridComp } from '@/components/BentoGrid';
+import { BentoGridCards } from '@/components/BentoGridCards';
+
 
 
 export default function Home() {
@@ -104,14 +105,14 @@ export default function Home() {
                 <AnimatedText
                   text="Welcome!"
                   textSize="text-9xl"
-                  textColor="text-[#002B5B]"
+                  textColor="text-[#06B6D4]"
                   className="!text-left"
                   onAnimationComplete={handleTitleAnimationComplete}
                 />
                 <AnimatedText
                   text="I`m Sergey, a web and software developer."
                   textSize="text-7xl"
-                  textColor="text-[#002B5B]"
+                  textColor="text-[#06B6D4]"
                   className="!text-left"
                   onAnimationComplete={handleDeveloperTextAnimationComplete}
                 />
@@ -208,9 +209,12 @@ export default function Home() {
         <LampComp />
       </section>
 
-      <section className="w-full flex flex-col items-end pt-16 pb-16">
-        <BentoGridComp />
-      </section>
+      <section className="w-full flex flex-col pt-16 pb-16 relative" style={{ marginLeft: '70rem', maxWidth: '1200px', zIndex: 50 }}>
+  <div className="w-full" style={{ height: 'auto' }}>
+    <BentoGridCards />
+  </div>
+</section>
+
 
       {showHireMe && <HireMe />}
 
