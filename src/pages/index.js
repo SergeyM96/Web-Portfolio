@@ -19,8 +19,6 @@ import BackgroundElements from '@/components/BackgroundElements';
 import { LampComp } from '@/components/LampComponent';
 import { BentoGridCards } from '@/components/BentoGridCards';
 
-
-
 export default function Home() {
   const [titleAnimationComplete, setTitleAnimationComplete] = useState(false);
   const [developerTextAnimationComplete, setDeveloperTextAnimationComplete] = useState(false);
@@ -106,18 +104,20 @@ export default function Home() {
                   text="Welcome!"
                   textSize="text-9xl"
                   textColor="text-[#06B6D4]"
-                  className="!text-left"
+                  className="!text-center font-bold text-shadow-lg shadow-lg transition-transform duration-500 ease-in-out transform hover:scale-105"
                   onAnimationComplete={handleTitleAnimationComplete}
                 />
                 <AnimatedText
                   text="I`m Sergey, a web and software developer."
-                  textSize="text-7xl"
+                  textSize="text-6xl"
                   textColor="text-[#06B6D4]"
-                  className="!text-left"
+                  className="!text-center font-bold text-shadow-lg shadow-lg transition-transform duration-500 ease-in-out transform hover:scale-105"
                   onAnimationComplete={handleDeveloperTextAnimationComplete}
                 />
-                {/* Divider line */}
-                <div className="w-9/12 border-b-4 border-[#ee8e68] my-4 animate-line"></div>
+                {/* Animated underline */}
+                <div className="w-full h-1 bg-gradient-to-r from-cyan-400 to-blue-600 mt-4 relative overflow-hidden">
+                  <span className="absolute inset-0 bg-white opacity-0 animate-pulse"></span>
+                </div>
                 <div className="flex items-start mt-16 space-x-8">
                   <motion.div
                     className="grid grid-cols-4 gap-4"
@@ -165,8 +165,6 @@ export default function Home() {
           </div>
         </Layout>
 
-        
-
         <div className='absolute right-8 bottom-8 inline-block w-64 overflow-hidden rounded-lg shadow-lg'>
           {showGif ? (
             <motion.div
@@ -198,7 +196,6 @@ export default function Home() {
                 alt="Replacement Image"
                 width={300}
                 height={200}
-                
               />
             </motion.div>
           )}
@@ -210,14 +207,12 @@ export default function Home() {
       </section>
 
       <section className="w-full flex flex-col pt-16 pb-16 relative" style={{ marginLeft: '70rem', maxWidth: '1200px', zIndex: 50 }}>
-  <div className="w-full" style={{ height: 'auto' }}>
-    <BentoGridCards />
-  </div>
-</section>
-
+        <div className="w-full" style={{ height: 'auto' }}>
+          <BentoGridCards />
+        </div>
+      </section>
 
       {showHireMe && <HireMe />}
-
     </>
   );
 }

@@ -27,9 +27,11 @@ export function Front3DCard({ title, description, imageUrl, linkUrl, linkText, b
           <CardItem translateZ={20} as={Link} href={linkUrl} target="__blank" className="px-4 py-2 rounded-xl text-s font-normal dark:text-white">
             {linkText}
           </CardItem>
-          <CardItem translateZ={20} as="button" className="px-6 py-3 rounded-xl bg-black dark:bg-white dark:text-black text-white text-sm font-bold">
+          {/*
+           <CardItem translateZ={20} as="button" className="px-6 py-3 rounded-xl bg-black dark:bg-white dark:text-black text-white text-sm font-bold">
             {buttonText}
-          </CardItem>
+           </CardItem>
+           */}
         </div>
       </CardBody>
     </CardContainer>

@@ -27,9 +27,11 @@ export function Rotated3DCard({ title, description, imageUrl, linkText, linkUrl,
           <CardItem translateZ={20} translateX={-40} as={Link} href={linkUrl} target="__blank" className="px-4 py-2 rounded-xl text-s font-normal dark:text-white">
             {linkText}
           </CardItem>
+          {/* 
           <CardItem translateZ={20} translateX={40} as="button" className="px-6 py-3 rounded-xl bg-black dark:bg-white dark:text-black text-white text-sm font-bold">
             {buttonText}
           </CardItem>
+          */}
         </div>
       </CardBody>
     </CardContainer>

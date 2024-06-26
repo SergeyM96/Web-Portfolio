@@ -30,8 +30,6 @@ const NavBar = () => {
       <nav className={styles.navLinks}>
         <CustomLink href="/" title="Home" className='mr-4' />
         <CustomLink href="/aboutUs" title="About" className='mx-4 ' />
-        <CustomLink href="/SomeIdea" title="SomeIdea" className='mx-4' />
-        <CustomLink href="/articles" title="Articles" className='ml-4' />
       </nav>
 
       <Logo />
