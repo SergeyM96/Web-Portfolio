@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @keyframes lineGrow {
     0% {
       width: 0;
@@ -82,4 +83,5 @@
 .fill-cyan {
   fill: #318999;
 }
+
 
