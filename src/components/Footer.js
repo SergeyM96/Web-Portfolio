@@ -5,15 +5,15 @@ import { motion } from 'framer-motion';
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#EDF9FE] text-[#2C3E50] font-sans">
-      <Layout className="py-10 flex flex-col md:flex-row items-center justify-between">
+    <footer className="w-full bg-[#EDF9FE] text-[#2C3E50] font-sans mt-4 py-4  z-20">
+      <Layout className="flex flex-col sm:flex-row items-center justify-between px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-6 md:mb-0 text-center md:text-left"
+          className="text-center sm:text-left mb-4 sm:mb-0 relative z-10"
         >
-          <span className="text-sm">
+          <span className="text-xs sm:text-sm">
             &copy; {new Date().getFullYear()} All Rights Reserved.
           </span>
         </motion.div>
@@ -22,26 +22,26 @@ const Footer = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-col items-center md:items-start text-center md:text-left"
+          className="flex flex-col items-center sm:items-start text-center sm:text-left mb-4 sm:mb-0 relative z-10"
         >
           <Link
             href="/"
-            className="text-3xl font-bold hover:text-[#ee8e68] transition-colors duration-300 mb-2"
+            className="text-xl sm:text-2xl md:text-3xl font-bold hover:text-[#ee8e68] transition-colors duration-300 mb-1 sm:mb-2"
           >
             Eudaimon
           </Link>
-          <span className="text-sm">Web &amp; Software Development</span>
+          <span className="text-xs sm:text-sm">Web &amp; Software Development</span>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="flex items-center text-center md:text-right"
+          className="flex items-center text-center sm:text-right relative z-10"
         >
-          <span className="text-sm mr-2">Designed &amp; Developed</span>
-          <span className="text-yellow-500 text-2xl mx-2">&#9670;</span>
-          <span className="text-sm">by S. Morozov</span>
+          <span className="text-xs sm:text-sm mr-1 sm:mr-2">Designed &amp; Developed</span>
+          <span className="text-yellow-500 text-xl sm:text-2xl mx-1 sm:mx-2">&#9670;</span>
+          <span className="text-xs sm:text-sm">by S. Morozov</span>
         </motion.div>
       </Layout>
     </footer>

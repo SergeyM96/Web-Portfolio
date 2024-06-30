@@ -2,26 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @keyframes lineGrow {
-    0% {
-      width: 0;
-    }
-    100% {
-      width: 75%; 
-    }
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 75%;
+  }
 }
 
 .animate-line {
-    animation: lineGrow 2s ease-in-out forwards;
-    width: 75%; /* Same width as specified in the keyframes */
+  animation: lineGrow 2s ease-in-out forwards;
+  width: 75%;
 }
 
 .perspective-1000 {
   perspective: 1000px;
 }
-
-/* CSS for background of Projects page */
 
 .transform-style-preserve-3d {
   transform-style: preserve-3d;
@@ -30,7 +27,7 @@
 .bg-custom-pattern {
   background: linear-gradient(135deg, #EDF9FE 0%, #C1EFFF 100%);
   position: relative;
-  overflow: hidden; /* Ensure child elements stay within the parent */
+  overflow: hidden;
 }
 
 .bg-custom-pattern::before {
@@ -44,16 +41,15 @@
   background-size: cover;
   opacity: 0.4;
   pointer-events: none;
-  z-index: 0; /* Ensure it stays at the bottom */
+  z-index: 0;
 }
 
-/* CSS for the Projects page title */
 .text-4xl {
-  font-size: 2.25rem; /* 36px */
+  font-size: 2.25rem;
 }
 
 .md\\:text-6xl {
-  font-size: 4rem; /* 64px */
+  font-size: 4rem;
 }
 
 .font-bold {
@@ -61,15 +57,15 @@
 }
 
 .text-neutral-800 {
-  color: #2d3748; /* Darker gray */
+  color: #2d3748;
 }
 
 .dark\\:text-white {
-  color: #ffffff; /* White text for dark mode */
+  color: #ffffff;
 }
 
 .mb-12 {
-  margin-bottom: 3rem; /* 48px */
+  margin-bottom: 3rem;
 }
 
 .text-center {
@@ -77,11 +73,9 @@
 }
 
 .text-blue-600 {
-  color: #3182ce; /* Blue color */
+  color: #3182ce;
 }
 
 .fill-cyan {
   fill: #318999;
 }
-
-

@@ -27,30 +27,32 @@ const SMLogo = () => {
   };
 
   return (
-    <MotionLink
-      href="/"
-      className="fixed top-4 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-dark text-light text-2xl flex items-center justify-center rounded-full font-bold z-50"
-      whileHover={{
-        backgroundColor: [
-          "#121212",
-          "rgba(131,58,180,1)",
-          "rgba(253,29,29,1)",
-          "rgba(252,176,69,1)",
-          "rgba(131,58,180,1)",
-          "#121212"
-        ],
-        scale: 1.5,
-        x: 0, // Ensure no horizontal translation on hover
-        transition: { duration: 1.5, repeat: Infinity }
-      }}
-      style={{ opacity: isHovered ? 1 : Math.max(0.7, 1 - scrollY / 500) }} // Adjust opacity based on hover state and scroll position
-      initial={{ x: 0, y: 0 }} // Set initial position to prevent shifting on first render
-      onClick={handleScrollToTop}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      SM
-    </MotionLink>
+    <div className="fixed top-0 left-0 w-full flex justify-center z-50 pointer-events-none">
+      <MotionLink
+        href="/"
+        className="mt-4 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-dark text-light text-lg sm:text-xl md:text-2xl flex items-center justify-center rounded-full font-bold pointer-events-auto"
+        whileHover={{
+          backgroundColor: [
+            "#121212",
+            "rgba(131,58,180,1)",
+            "rgba(253,29,29,1)",
+            "rgba(252,176,69,1)",
+            "rgba(131,58,180,1)",
+            "#121212"
+          ],
+          scale: 1.5,
+          transition: { duration: 1.5, repeat: Infinity }
+        }}
+        style={{ 
+          opacity: isHovered ? 1 : Math.max(0.7, 1 - scrollY / 500),
+        }}
+        onClick={handleScrollToTop}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        SM
+      </MotionLink>
+    </div>
   );
 };
 

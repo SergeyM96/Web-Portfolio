@@ -9,7 +9,7 @@ const HireMe = () => {
     const observerOptions = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.5, // Adjust this value to control when the styles change
+      threshold: 0.5,
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -35,12 +35,12 @@ const HireMe = () => {
   }, []);
 
   return (
-    <div className="fixed left-4 bottom-4 flex items-center justify-center overflow-hidden" ref={hireMeRef}>
-      <div className="relative w-48 h-48 flex items-center justify-center">
-        <CircularText className="fill-cyan absolute animate-spin-slow" />
+    <div className="fixed left-4 bottom-4 md:left-8 md:bottom-8 flex items-center justify-center overflow-hidden z-40" ref={hireMeRef}>
+      <div className="relative w-32 h-32 md:w-48 md:h-48 flex items-center justify-center">
+        <CircularText className="fill-cyan absolute animate-spin-slow w-full h-full" />
         <Link
           href="mailto:globaldevsm@gmail.com"
-          className="flex items-center justify-center absolute bg-cyan-500 text-white shadow-md border-2 border-solid border-white w-20 h-20 rounded-full font-semibold hover:bg-white hover:text-cyan-500 z-10 transition-all duration-300"
+          className="flex items-center justify-center absolute bg-cyan-500 text-white shadow-md border-2 border-solid border-white w-16 h-16 md:w-20 md:h-20 rounded-full font-semibold hover:bg-white hover:text-cyan-500 z-10 transition-all duration-300 text-xs md:text-sm"
           style={{
             left: '50%',
             top: '50%',

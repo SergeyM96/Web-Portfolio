@@ -46,7 +46,7 @@ const AnimatedText = ({ text, className = '', textSize = '', textColor = '', onA
         animate={controls}
         variants={wordAnimation}
         aria-label={text}
-        className={`inline-block w-full  font-bold ${textSize} ${textColor}`}
+        className={`inline-block w-full font-bold ${textSize} ${textColor}`}
       >
         {text.split(' ').map((word, index) => (
           <motion.span
