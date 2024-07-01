@@ -79,3 +79,13 @@
 .fill-cyan {
   fill: #318999;
 }
+
+.footer-container {
+  position: relative;
+}
+
+.footer-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

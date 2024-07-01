@@ -91,37 +91,37 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main className="flex flex-col items-center w-full min-h-screen"> 
-      <Layout className="pt-8 sm:pt-12 md:pt-16 lg:pt-24 px-4 sm:px-8 md:px-16 lg:px-24">
-  <div className="relative w-full">
-    <BackgroundElements className="absolute top-0 left-0 z-0" /> 
-    <div className="flex flex-col md:flex-row items-center justify-between w-full relative z-10">
-      <AnimatedLogo isAnimationComplete={titleAnimationComplete} className="w-full md:w-1/2 mb-4 md:mb-0 md:-mt-16 lg:-mt-24" />
-      <div className="w-full md:w-1/2 flex flex-col items-start self-center md:-mt-40 lg:-mt-48"> 
-        <AnimatedText
-          text="Welcome!"
-          textSize="text-4xl sm:text-5xl md:text-7xl lg:text-9xl"
-          textColor="text-[#06B6D4]"
-          className="!text-center font-bold transition-transform duration-500 ease-in-out transform hover:scale-105"
-          style={{
-            textShadow: '0 0 10px rgba(6, 182, 212, 0.8), 0 0 20px rgba(6, 182, 212, 0.6), 0 0 30px rgba(6, 182, 212, 0.4)',
-          }}
-          onAnimationComplete={handleTitleAnimationComplete}
-        />
-        <AnimatedText
-          text="Sergey Morozov - Web & Software Developer."
-          textSize="text-2xl sm:text-3xl md:text-4xl lg:text-6xl"
-          textColor="text-[#06B6D4]"
-          className="!text-center font-bold transition-transform duration-500 ease-in-out transform hover:scale-105 mt-4"
-          style={{
-            textShadow: '0 0 10px rgba(6, 182, 212, 0.8), 0 0 20px rgba(6, 182, 212, 0.6), 0 0 30px rgba(6, 182, 212, 0.4)',
-          }}
-          onAnimationComplete={handleDeveloperTextAnimationComplete}
-        />
-        <div className="w-full h-1 bg-gradient-to-r from-cyan-400 to-blue-600 mt-3 sm:mt-4 md:mt-5 relative overflow-hidden">
-          <span className="absolute inset-0 bg-white opacity-0 animate-pulse"></span>
-        </div>
+        <Layout className="pt-8 sm:pt-12 md:pt-16 lg:pt-24 px-4 sm:px-8 md:px-16 lg:px-24">
+          <div className="relative w-full">
+            <BackgroundElements className="absolute top-0 left-0 z-0" /> 
+            <div className="flex flex-col md:flex-row items-center justify-between w-full relative z-10">
+              <AnimatedLogo isAnimationComplete={titleAnimationComplete} className="w-full md:w-1/2 mb-4 md:mb-0 md:-mt-16 lg:-mt-24" />
+              <div className="w-full md:w-1/2 flex flex-col items-start self-center md:-mt-40 lg:-mt-48"> 
+                <AnimatedText
+                  text="Welcome!"
+                  textSize="text-4xl sm:text-5xl md:text-7xl lg:text-9xl"
+                  textColor="text-[#06B6D4]"
+                  className="!text-center font-bold transition-transform duration-500 ease-in-out transform hover:scale-105"
+                  style={{
+                    textShadow: '0 0 10px rgba(6, 182, 212, 0.8), 0 0 20px rgba(6, 182, 212, 0.6), 0 0 30px rgba(6, 182, 212, 0.4)',
+                  }}
+                  onAnimationComplete={handleTitleAnimationComplete}
+                />
+                <AnimatedText
+                  text="Sergey Morozov - Web & Software Developer."
+                  textSize="text-2xl sm:text-3xl md:text-4xl lg:text-6xl"
+                  textColor="text-[#06B6D4]"
+                  className="!text-center font-bold transition-transform duration-500 ease-in-out transform hover:scale-105 mt-4"
+                  style={{
+                    textShadow: '0 0 10px rgba(6, 182, 212, 0.8), 0 0 20px rgba(6, 182, 212, 0.6), 0 0 30px rgba(6, 182, 212, 0.4)',
+                  }}
+                  onAnimationComplete={handleDeveloperTextAnimationComplete}
+                />
+                <div className="w-full h-1 bg-gradient-to-r from-cyan-400 to-blue-600 mt-3 sm:mt-4 md:mt-5 relative overflow-hidden">
+                  <span className="absolute inset-0 bg-white opacity-0 animate-pulse"></span>
+                </div>
                 <div className="flex flex-col md:flex-row items-start mt-8 md:mt-16 space-y-8 md:space-y-0 md:space-x-8 w-full">
-                  <motion.div
+                <motion.div
                     className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-4 w-full md:w-2/3" 
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={skillIconsAnimation}
@@ -167,30 +167,40 @@ export default function Home() {
         </Layout>
 
         <div className='hidden 2xl:block absolute right-4 bottom-4 2xl:right-8 2xl:bottom-8 w-64 overflow-hidden rounded-lg shadow-lg z-50'>
-  {showGif ? (
-    <div className="relative flex flex-col items-center bg-white">
-      <span className="text-xl font-bold mb-2 text-[#002B5B]">CODING . . .</span>
-      <Image
-        src="/coding-person.gif"
-        alt="Coding"
-        width={300}
-        height={200}
-        layout="responsive"
-      />
-    </div>
-  ) : (
-    <div className="relative flex flex-col items-center bg-white">
-      <span className="text-xl font-bold mb-2 text-[#ee8e68]">Let&apos;s GO!</span>
-      <Image
-        src="/rocket.png"
-        alt="Rocket"
-        width={300}
-        height={200}
-        layout="responsive"
-      />
-    </div>
-  )}
-</div>
+          {showGif ? (
+            <motion.div
+              className="relative flex flex-col items-center bg-white"
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 0 }}
+              transition={{ duration: 6, delay: 2 }}
+            >
+              <span className="text-xl font-bold mb-2 text-[#002B5B]">CODING . . .</span>
+              <Image
+                src="/coding-person.gif"
+                alt="Coding"
+                width={300}
+                height={200}
+                layout="responsive"
+              />
+            </motion.div>
+          ) : (
+            <motion.div
+              className="relative flex flex-col items-center bg-white"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 4, delay: 0 }}
+            >
+              <span className="text-xl font-bold mb-2 text-[#ee8e68]">Let&apos;s GO!</span>
+              <Image
+                src="/rocket.png"
+                alt="Rocket"
+                width={300}
+                height={200}
+                layout="responsive"
+              />
+            </motion.div>
+          )}
+        </div>
       </main>
 
       <section className="w-full flex flex-col items-center pt-16 pb-16">
@@ -207,3 +217,4 @@ export default function Home() {
     </>
   );
 }
+
