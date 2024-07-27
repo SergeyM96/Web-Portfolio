@@ -90,13 +90,13 @@ export default function Home() {
         <meta name="description" content="Sergey Morozov, a web and software developer specializing in modern web technologies." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main className="flex flex-col items-center w-full min-h-screen"> 
+      <main className="flex flex-col items-center w-full min-h-screen overflow-x-hidden">
         <Layout className="pt-8 sm:pt-12 md:pt-16 lg:pt-24 px-4 sm:px-8 md:px-16 lg:px-24">
           <div className="relative w-full">
             <BackgroundElements className="absolute top-0 left-0 z-0" /> 
             <div className="flex flex-col md:flex-row items-center justify-between w-full relative z-10">
-              <AnimatedLogo isAnimationComplete={titleAnimationComplete} className="w-full md:w-1/2 mb-4 md:mb-0 md:-mt-16 lg:-mt-24" />
-              <div className="w-full md:w-1/2 flex flex-col items-start self-center md:-mt-40 lg:-mt-48"> 
+              <AnimatedLogo isAnimationComplete={titleAnimationComplete} className="w-1/2 md:w-1/3 lg:w-1/4 mb-4 md:mb-0 md:-mt-16 lg:-mt-24" />
+              <div className="w-full md:w-1/2 flex flex-col items-center md:items-start md:self-center">
                 <AnimatedText
                   text="Welcome!"
                   textSize="text-4xl sm:text-5xl md:text-7xl lg:text-9xl"
@@ -120,9 +120,9 @@ export default function Home() {
                 <div className="w-full h-1 bg-gradient-to-r from-cyan-400 to-blue-600 mt-3 sm:mt-4 md:mt-5 relative overflow-hidden">
                   <span className="absolute inset-0 bg-white opacity-0 animate-pulse"></span>
                 </div>
-                <div className="flex flex-col md:flex-row items-start mt-8 md:mt-16 space-y-8 md:space-y-0 md:space-x-8 w-full">
-                <motion.div
-                    className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-4 w-full md:w-2/3" 
+                <div className="flex flex-col md:flex-row items-center justify-center md:justify-start mt-8 md:mt-16 w-full">
+                  <motion.div
+                    className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-2 md:gap-4 w-full md:w-auto"
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={skillIconsAnimation}
                   >
@@ -131,6 +131,7 @@ export default function Home() {
                         key={index}
                         initial={{ opacity: 0, scale: 0.5 }}
                         animate={skillIconsAnimation}
+                        className="flex justify-center items-center"
                       >
                         <SkillIcon icon={skill.icon} />
                       </motion.div>
@@ -140,7 +141,7 @@ export default function Home() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={showLinks ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.5 }}
-                    className="flex flex-col items-start space-y-8 md:space-y-24 w-full md:w-1/3"
+                    className="flex flex-col items-center md:items-start space-y-8 md:space-y-24 w-full md:w-auto mt-8 md:mt-0"
                   >
                     <CustomLink
                       href="/projects"
@@ -217,4 +218,3 @@ export default function Home() {
     </>
   );
 }
-
