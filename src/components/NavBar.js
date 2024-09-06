@@ -41,6 +41,7 @@ const NavBar = () => {
       <nav className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row absolute md:relative top-full left-8 w-full md:w-auto bg-white md:bg-transparent p-4 md:p-0 ${styles.navLinks}`}>
         <CustomLink href="/" title="Home" className='mr-0 md:mr-4 mb-2 md:mb-0' />
         <CustomLink href="/aboutUs" title="About" className='mr-0 md:mr-4 mb-2 md:mb-0' />
+        <CustomLink href="/projects" title="Projecs" className='mr-0 md:mr-4 mb-2 md:mb-0' />
       </nav>
 
       <nav className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex ${styles.navLinks}`}>
